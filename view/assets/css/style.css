@@ -80,12 +80,27 @@ form{
     background-color: #ffebcd;
     display: block;
 
+    height: 10px;
+    width: 500px;
     padding-left:5%;
     padding-right:1%;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+    margin-left: 5%;
     text-align: left;
 }
+.class{
+    border: 1px solid black;
+    background-color: #ffebcd;
+    display: block;
+    font-family: Fredoka;
+    width: 100px; /* Largeur du carré */
+    height: 100px; /* Hauteur du carré */
+    margin: 10px; /* Marge autour du carré */
+    display: inline-block;
+}
+
 
 
 /*---------------------------------------------------------------------------*/
@@ -100,6 +115,7 @@ header{
     font-size: 12px;
     padding-right: 0;
     padding-left: 0;
+    border-radius: 1%;
 }
 ul{
     display: flex;
@@ -125,6 +141,7 @@ footer{
     font-size: 12px;
     padding-right: 0;
     padding-left: 0;
+    border-radius: 1%;
 }
 .container{
         

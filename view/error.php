@@ -1,4 +1,4 @@
-<?php include_once 'templates/parts/header.php'; ?>
+<?php include_once 'view/parts/header.php'; ?>
 <main>
     <section>
         <h1>Erreur :</h1>
@@ -6,4 +6,4 @@
     </section>
 </main>
 
-<?php include_once 'templates/parts/footer.php';
+<?php include_once 'view/parts/footer.php';

@@ -1,3 +1,5 @@
+<?php 
+?>
 <main>
     <section>
         <h1>Inscription</h1>
@@ -7,7 +9,7 @@
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" >
 
             <?php else : ?>
-                <?php $_SESSION['csrf_token'] = functions\generateCsrfToken(); ?>
+                <?php $_SESSION['csrf_token'] = Security::generateCsrfToken(); ?>
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
             <?php endif; ?>
@@ -17,12 +19,12 @@
             <?php if (isset($data['errors']['nom'])) : ?>
                 <p class="error-message"><?php echo $data['errors']['nom']; ?></p>
             <?php endif; ?>
-            <label for="prenom">Prénom:</label>
+            <label for="prenom">Prénom:</label><br>
             <input type="text" id="prenom" name="prenom" class = "inputRequired" required><br>
             <?php if (isset($data['errors']['prenom'])) : ?>
                 <p class="error-message"><?php echo $data['errors']['prenom']; ?></p>
             <?php endif; ?>
-            <label for="adresse">Adresse:</label>
+            <label for="adresse">Adresse:</label><br>
             <input type="text" id="adresse" name="adresse" class = "inputRequired" required><br>
             <?php if (isset($data['errors']['adresse'])) : ?>
                 <p class="error-message"><?php echo $data['errors']['adresse']; ?></p>
@@ -32,12 +34,12 @@
             <?php if (isset($data['errors']['email'])) : ?>
                 <p class="error-message"><?php echo $data['errors']['email']; ?></p>
             <?php endif; ?>
-            <label for="password">Mot de passe:</label>
+            <label for="password">Mot de passe:</label><br>
             <input type="password" id="password" name="password" class = "inputRequired" required><br>
             <?php if (isset($data['errors']['password'])) : ?>
                 <p class="error-message"><?php echo $data['errors']['password']; ?></p>
             <?php endif; ?>
-            <label for="confirm_password">Confirmer le mot de passe:</label>
+            <label for="confirm_password">Confirmer le mot de passe:</label><br>
             <input type="password" id="confirm_password" name="confirm_password" class = "inputRequired" required><br>
             <?php if (isset($data['errors']['confirm_password'])) : ?>
                 <p class="error-message"><?php echo $data['errors']['confirm_password']; ?></p>

@@ -9,15 +9,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./templates/assets/css/style.css">
-    <script src="./templates/assets/js/main.js"></script>
+    <link rel="stylesheet" href="./view/assets/css/style.css">
+    <script src="./view/assets/js/main.js"></script>
     <title>Gestion d'utilisateur</title>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-            <img src="./templates/assets/img/logo bl.jpg" alt="Un logo">
+            <img src="./view/assets/img/logo bl.jpg" alt="Un logo">
                 <li><a href="index.php">Accueil</a></li>
                 <?php
                     // Si l'utilisateur n'est pas connecté, afficher les liens d'inscription et de connexion
