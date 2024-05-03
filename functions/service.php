@@ -27,10 +27,10 @@ class Service
             } else {
                 // Appeler la fonction pour enregistrer l'utilisateur
                 $userRepository = new UserRepository();
-                $userRepository->registerUser($nom, $prenom, $adresse, $email, $password, $confirmPassword);
-                header("Location: index.php?action=login");
-                exit();
-                /*        
+                $error = $userRepository->registerUser($nom, $prenom, $adresse, $email, $password, $confirmPassword);
+                /*header("Location: index.php?action=login");
+                exit();*/
+                        
                 // Si l'enregistrement est réussi, rediriger vers la page de connexion
                 if ($error === true) {
                     header("Location: index.php?action=login");
@@ -40,7 +40,7 @@ class Service
                     // Ajouter le message d'erreur au tableau de données pour l'afficher dans le formulaire
                     $data['error'] = $error;
                     include_once 'view/register.php';
-                }*/
+                }
             }
         } else {
             // Afficher le formulaire d'inscription si la requête n'est pas de type POST
@@ -55,7 +55,16 @@ class Service
             $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             $password = $_POST['password'];
             $userRepository = new UserRepository();
-            $userRepository->loginUser($email, $password);
+            $error = $userRepository->loginUser($email, $password);
+            if ($error === true) {
+                header("Location: index.php?action=login");
+                exit();
+            } else {
+                // En cas d'erreur, afficher le message d'erreur sur la page d'inscription
+                // Ajouter le message d'erreur au tableau de données pour l'afficher dans le formulaire
+                $data['error'] = $error;
+                include_once 'view/register.php';
+            }
         } else {
             include_once 'view/login.php';
         }
